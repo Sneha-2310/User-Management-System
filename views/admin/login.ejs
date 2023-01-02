@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMS</title>
+   
+</head><style>
+  .full{
+    background-color: bisque;}
+.form{
+  margin-left: 550px;
+color:cornflowerblue;}
+.one{
+  margin-left: 550px;
+color: rgb(43, 106, 224);
+margin-top: 100px;
+}
+.two{
+  margin-left: 500px;
+     padding: 40px;}
+     .three{
+      margin-left: 550px;
+     }
+.four{
+border-radius: 3px;
+border-color: azure; 
+margin-top: 10px;    }
+.five{
+margin-left: 80px;
+margin-top: 20px;
+width: 90px;
+     }
+     .three{
+      color: rgb(36, 190, 190);
+      margin-left: 600px;
+     }
+</style>
+<body class="full">
+
+<h2 class="one">Admin Login</h2>
+
+<% 
+if(typeof message !=='undefined'){
+    %>
+    <h4><%= message %></h4>
+    <%
+  }
+%>
+
+<form  class="two"method="post">
+  Email: <input type="text" class="four" name="email"required>
+  <br><br>
+  password: <input type="password" class="four" name="password"required>
+  <br><br>
+  <input type="submit" class="five" value="Login">
+</form>
+
+<h4><a href="/login" class="three">Go to User Login</a></h4>
+
+<% include('../layouts/footer.ejs') %>

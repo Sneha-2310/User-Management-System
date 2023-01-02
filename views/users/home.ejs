@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Username</title>
+</head>
+<style>
+
+.full{
+    background-color: bisque;
+    margin-left: 350px;
+}
+.one{margin-top: 100px;
+    margin-left: 150px;
+    margin-bottom: 50px;
+color: rgb(0, 0, 0);}
+.two{
+   margin-top: 20px;
+   margin-bottom: 20px;
+   color: rgb(135, 50, 215);
+}
+.three{color:rgb(0, 0, 0)}
+
+</style>
+<body class="full">
+<h3 class="one"><b>Welcome <%= user.name %></b>
+</h3>
+<table  class="three"width="80%">
+    <tr>
+        <td>Name:</td>
+       <td><%= user.name %></td>
+    </tr>
+    <tr>
+        <td>Contact number:</td>
+       <td><%= user.contact %></td>
+    </tr>
+    <tr>
+        <td>Email:</td>
+       <td><%= user.email %></td>
+    </tr>
+    <tr>
+        <td>Pancard Number:</td>
+       <td><%= user.pancard %></td>
+    </tr>
+    <tr>
+        <td>Company Name:</td>
+       <td><%= user.company_name %></td>
+    </tr>
+    <tr>
+        <td>Experience:</td>
+       <td><%= user.experience %></td>
+    </tr>
+    <tr>
+        <td>Skills:</td>
+       <td><%= user.technical_skills%></td>
+    </tr>
+    <tr>
+        <td>Status:</td>
+       <td><%= user.statuss %></td>
+    </tr>
+    
+
+</table>
+<br><br>
+<a class="two" href="/logout">Logout</a>
+<br><br>
+<a class="two" href="/edit?id=<%= user._id %>">Add Query</a>
+<br><br>
+<a class="two" href="/approved?id=<%= user._id %>">Approved Questions</a>
+
+<% include('../layouts/footer.ejs') %>

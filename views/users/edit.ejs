@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMS</title>
+   
+</head>
+<style>
+    .one{color: chocolate;
+                margin-left: 500px;
+            margin-top: 200px;}
+    .two{
+                    margin-left: 500px;}
+    .full{
+            background-color: bisque;
+                }
+    .a{
+        color: black;
+        margin-left: 600px; 
+    }
+    .three{margin-bottom: 20px;
+    margin-top: 30px;
+margin-left: 80px;
+border-radius: 5px;}
+    </style>
+
+<body class="full" >
+
+<div class="full">
+<h1 class="one">Please add your Query</h1>
+<form class="two"  method="post">
+<input type="hidden" name="x" value="<%= user._id %>">
+    Query:<input type="text" name="q" required >
+<br><br>
+Description:<textarea rows="5" cols="20" name="qdescription" required></textarea>
+<br><br>
+<input class="three"type="submit" value="Add Query">
+</form>
+<a  class="a"href="/home">HOME</a>
+<% include('../layouts/footer.ejs') %>

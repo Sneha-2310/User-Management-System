@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMS</title>
+   
+</head><style>
+  .full{background-color: bisque;}
+.t{margin-left: 450px;
+padding-left: 10px;
+padding-right: 10px;
+}
+.one{margin-left: 450px;
+margin-top: 50px;
+color: rgb(9, 79, 92);
+padding-bottom: 20px;}
+
+.two{
+   color: rgb(45, 167, 220);
+   margin-left: 550px;
+   padding-top: 70px;  
+}
+
+.three{
+   border-radius: 5px;
+   margin-left: 100px; 
+}
+.name{
+   border-radius: 5px;
+   border-color: rgb(255, 254, 254);
+   padding-left: 50px;
+}
+
+</style>
+<body class="full">
+
+<h3 class="one">User Registration Form</h3>
+<form method="post" class="t">
+   Name   : <input type="text" class="name"  name="name" placeholder="Enter Name" required>
+   <br><br>
+
+   Contact   : <input type="number" class="name"name="contact"placeholder="Enter contact number" required>
+   <br><br>
+
+   Email   :  <input type="email"class="name" name="email" placeholder="Enter Email-Id" required>
+   <br><br>
+
+   PAN   : <input type="text"class="name" name="pancard" placeholder="Enter pancard" required>
+   <br><br>
+
+   Company Name   : <input type="text"class="name" name="company_name" placeholder="Enter company name" required>
+   <br><br>
+
+   Experience (in years)   : <input type="number" class="name"name="experience" placeholder="Enter experience" required>
+   <br><br>
+
+   Technical Skills   : <select class="name"  name="technical_skills" required>
+      <option value = "Computer Architecture" selected>Computer Architecture</option>
+      <option value = "c++">c++</option>
+      <option value = "Java">Java</option>
+      <option value = "python">python</option>
+      <option value = "kotlin">kotlin</option>
+      <option value = "frontend">Frontend Developer</option>
+      <option value = "backend">Backend Developer</option>
+      <option value = "full_stack">Full Stack Developer</option>
+      <option value = "networking">networking</option>
+   </select>
+   <br><br>
+
+   Password   : <input type="password"  class="name"name="password"placeholder="Enter password" required>
+   <br><br>
+<br><br>
+    <input type="submit"  class="three" value="register">
+   <br><br>
+</form>
+
+
+
+<%
+if(typeof message !=='undefined'){
+   %>
+   <p style="color:greenyellow"><%=message%></p>
+   <%
+}
+%>
+
+<h4><a href="/login" class="two">Go to Login</a></h4>
+
+<% include('../layouts/footer.ejs') %>

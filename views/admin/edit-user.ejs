@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Username</title>
+</head>
+<style>
+
+.full{
+    background-color: bisque;
+    margin-left: 550px;
+}
+.one{margin-top: 90px;
+color: blueviolet;
+margin-bottom: 40px;}
+.two{
+  
+   margin-bottom: 35px;
+   color: rgb(135, 50, 215);
+}
+.three{
+   border-radius: 5px;
+border-color: azure;
+background-color: aliceblue;
+margin-top: 10px;
+margin-bottom: 40px;
+width: 160px;}
+.four{
+    margin-top: 20px;
+color: rgb(152, 91, 210);
+}
+
+</style>
+<body class="full">
+<form  method="post">
+   <h3 class="one"><b>Status</b></h3> 
+   <p style="color: blueviolet;"> <%= users.name %></p>
+    
+    Active:<input class="two" type="radio" name="statuss" value="1"
+    <% if(users.statuss===1){ %> checked <% } %> >
+    <br>
+    Inactive:<input class="two"type="radio" name="statuss" value="2"
+    <% if(users.statuss===2){ %> checked <% } %>>
+    <br>
+    Pending:<input class="two"type="radio" name="statuss" value="0"
+    <% if(users.statuss===0){ %> checked <% } %>>
+    <br><br>
+    <input type="hidden" name="id" value="<%= users._id%>">
+    <input class="three"type="submit" value="Update Status">
+</form>
+<a class="four" href="/admin/">Go DashBoard</a>
+
+<% include('../layouts/footer.ejs') %>

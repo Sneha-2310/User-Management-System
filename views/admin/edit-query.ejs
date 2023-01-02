@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMS</title>
+   
+</head>
+<style>
+    .one{color: chocolate;
+        margin-top: 60px;        
+        }
+    .two{
+                    margin-left: 200px;}
+    .full{
+            background-color: bisque;
+            margin-left: 400px;
+            margin-top: 50px;
+    }
+    </style>
+
+<body class="full" >
+<form  class="two" method="post">
+    <b class="one">Status</b>
+   <p style="color: blueviolet;"> <%= query.query_name %></p>
+    
+    Active:<input type="radio" name="statuss" value="1"
+    <% if(query.query_status===1){ %> checked <% } %> >
+    <br>
+    Inactive:<input type="radio" name="statuss" value="2"
+    <% if(query.query_status===2){ %> checked <% } %>>
+    <br>
+    Pending:<input type="radio" name="statuss" value="0"
+    <% if(query.query_status===0){ %> checked <% } %>>
+    <br><br>
+    <input type="hidden" name="id" value="<%= id%>">
+    <input type="submit" value="Update Status">
+</form>
+<a class="two"href="/admin/queries">Go DashBoard</a>
+
+<% include('../layouts/footer.ejs') %>

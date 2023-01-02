@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Username</title>
+</head>
+<style>
+
+.full{
+    background-color: bisque;
+    
+}
+
+
+</style>
+<body class="full">
+
+<h1>DashBoard</h1>
+<table width="100%">
+    <tr>
+      <td>  <b>Name</b></td>
+       <td><b>Email</b></td>
+             <td><b>Contact Number</b></td>
+                <td><b>PanCard</b></td>
+                    <td><b>Company</b></td>
+                        <td><b>Experience</b></td>
+                            <td><b>skills</b></td>
+                                <td><b>status</b></td>
+                                    <td><b>Actions</b></td>
+    </tr>
+    <% if(users.length>0){
+        for(let i=0;i<users.length;i++){
+            %><tr>
+                <td><%= users[i].name %></td>
+                <td><%= users[i].email %></td>
+                <td><%= users[i].contact %></td>
+                <td><%= users[i].pancard %></td>
+                <td><%= users[i].company_name %></td>
+                <td><%= users[i].experience %></td>
+                <td><%= users[i].technical_skills %></td>
+                <td>
+                    <% if(users[i].statuss==0){
+                        %> <p style="color: rgb(215, 119, 40);">Pending</p>
+                    <% }
+                    else if(users[i].statuss==1){
+                        %> <p style="color: green;">Active</p>
+                    <% }
+                    else {
+                        %>
+                        <p style="color: red;">Inactive</p>
+                    <% } %>
+                </td>
+                <td><a href="/admin/edit-user?id=<%=users[i]._id %>">Change Status</a></td>
+            </tr>
+            <% } 
+    }
+    else{ %>
+        <p>No Users Found</p>
+   <% }
+    %>
+</table>
+<a href="/admin/home">Go To Home</a>
+
+<% include('../layouts/footer.ejs') %>

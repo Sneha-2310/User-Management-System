@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMS</title>
+   
+</head><style>
+  .full{background-color: bisque;}
+.t{margin-left: 200px;
+padding-left: 10px;
+padding-right: 10px;}
+.one{margin-left: 200px;
+margin-top: 50px;}
+
+</style>
+<body class="full">
+
+<h3 class="one"> Your Approved Queries</h3>
+
+<table width="80%" class="t">
+    <tr><td></td>
+        <td><b>Query Name</b></td>
+        <td><b>Query Description</b></td>
+    </tr>
+    <% if(user.queries.length>0){
+        for(let i=0;i<user.queries.length;i++){
+           
+            if(user.queries[i].query_status==1){        
+            %><tr>      <td>*</td>
+                        <td><%= user.queries[i].query_name %></td>
+                        <td><%= user.queries[i].query_description %></td>
+                      </tr>
+                    <% 
+                }
+              }
+            }
+    else{ %>
+        <p style="color: blueviolet;">No Queries Found</p>
+   <% }
+    %>
+</table>
+
+<% include('../layouts/footer.ejs') %>

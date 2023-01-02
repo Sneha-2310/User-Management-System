@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Username</title>
+</head>
+<style>
+
+.full{
+    background-color: bisque;
+    margin-left: 100px;
+}
+.one{margin-top: 50px;
+    margin-left: 400px;
+    margin-bottom: 40px;
+color: rgb(0, 0, 0);}
+.two{
+   margin-top: 35px;
+   margin-bottom: 35px;
+   color: rgb(135, 50, 215);
+}
+.three{color:rgb(228, 136, 23)}
+.four{color: rgb(24, 14, 2);
+border-top: 1000px;
+}
+.six{
+   padding-right: 20px;
+}
+</style>
+<body class="full">
+<h1 class="one">DashBoard</h1>
+<table width="80%">
+    <tr><td></td>
+        <td><b>Query Name</b></td>
+        <td><b>Query Description</b></td>
+        <td><b>Query Status</b></td>
+    </tr>
+    <% if(users.length>0){let k=0;
+        for(let i=0;i<users.length;i++){
+            if(users[i].queries.length>0){
+                for(let j=0;j<users[i].queries.length;j++){k++;
+                    %><tr><td class="six"><%=k%>)</td>
+                        <td><%= users[i].queries[j].query_name %></td>
+                        <td><%= users[i].queries[j].query_description %></td>
+                        <td>
+                            <% if(users[i].queries[j].query_status==0){
+                                %> <p>Pending</p>
+                            <% }
+                            else if(users[i].queries[j].query_status==1){
+                                %> <p style="color: green;">Active</p>
+                            <% }
+                            else {
+                                %>
+                                <p style="color: red;">Inactive</p>
+                            <% } %>
+                        </td>
+                        <td><a class="three" href="/admin/edit-query?id=<%=users[i]._id %>&query_id=<%=users[i].queries[j]._id %>">Change Status</a></td>
+                    </tr>
+                    <% 
+                }
+            }
+        }
+    }
+    else{ %>
+        <p>No Users Found</p>
+   <% }
+    %>
+</table>
+<br><br><br>
+<a class="four"href="/admin/home">Go To Home</a>
+
+<% include('../layouts/footer.ejs') %>

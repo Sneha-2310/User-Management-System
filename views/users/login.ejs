@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMS</title>
+   
+</head><style>
+  .full{background-color: bisque;}
+.form{margin-left: 500px;}
+.one{margin-left: 500px;}
+.two{margin-left: 500px;
+     padding: 40px;}
+</style>
+<body class="full">
+<h3 class="two"> Login Form</h3>
+<% 
+if(typeof message !=='undefined'){
+    %>
+    <h4><%= message %></h4>
+    <%
+  }
+%>
+<form class="form" action="/login" method="post">
+Email: <input type="text" name="email"required>
+<br><br>
+password: <input type="password" name="password"required>
+<br><br>
+<input type="submit" value="Login">
+</form>
+<div class="one">
+<h4><a href="/register">Go to Registration</a></h4>
+<h4>
+  <a href="/admin">Go to Admin Login</a></h4>
+</div>
+  <br><br><br><br>
+
+
+
+  
+</body>
+</html>
